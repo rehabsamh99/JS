@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="username" required>
+        <input type="email" placeholder="---@gmail.com" name="" id="" required>
+        <input id="password" type="password" placeholder="password" required>
+        <input id="cnfrm-password" type="password" placeholder="confirm password" required>
+        <p id="message"></p>
+        <button class="btn" onclick="checkPassword()"> submit</button>
+    </form>
+
+    <script>
+        function checkPassword(){
+            let password = document.getElementById("password").value;
+            let cnfrmPassword= document.getElementById("cnfrm-password").value;
+            console.log(password,cnfrmPassword);
+            let message = document.getElementById("message");
+            
+            if(password.length!=0) {
+                if (password == cnfrmPassword){
+                    message.textContent = "Passwords match";
+                    message.style.backgroundColor ="green";
+                }
+                else{
+                    message.textContent = "Passwords don't match";
+                    message.style.backgroundColor ="red"
+                }
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>
